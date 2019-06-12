@@ -1,0 +1,56 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<mat-card>
+
+<mat-card-title >  
+  {{ title }}
+</mat-card-title>
+
+<mat-list *ngFor="let todos of toDo">
+      {{ todos.name }}
+     {{ todos.time }}  
+     <br/><mat-form-field><input [(ngModel)]="editedName"  matInput placeholder="name" ></mat-form-field> <br/>
+      <mat-form-field class="example-full-width"> <input [(ngModel)]="editedTime" matInput placeholder="time"></mat-form-field>
+      
+      <button mat-button (click)="edit(todos,editedName,editedTime)"> <mat-icon aria-hidden="false" aria-label="edit">edit</mat-icon></button>
+      <button mat-button (click)="delete(todos)"> <mat-icon aria-hidden="false" aria-label="delete" >delete</mat-icon> </button>
+   </mat-list>
+
+   <br/>
+<div *ngIf="empty">
+
+  
+      your values is empty
+ 
+</div>
+     
+    <mat-form-field class="example-full-width"><input [(ngModel)]="newToDoName"  matInput placeholder="name" value=""></mat-form-field>    
+
+   <mat-form-field class="example-full-width"> <input [(ngModel)]="newToDoTime"  matInput placeholder="time" value=""> </mat-form-field> 
+
+   <button mat-button (click)="addToDo()"><mat-icon aria-hidden="false" aria-label="add">add</mat-icon></button>
+       
+  <form>
+ 
+ </form>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mat-card>
+
